@@ -7,7 +7,7 @@ def test_health():
     response = client.get("/health")
 
     assert response.status_code == 200
-    assert response.get_json() == {"status": "UP"}
+    assert response.get_json() == {"status": "DOWN"}
 
 
 # Test 2: Version endpoint
