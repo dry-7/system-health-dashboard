@@ -1,0 +1,16 @@
+services:
+  app-staging:
+    image: system-health-dashboard:mp2
+    container_name: app-staging
+    ports:
+      - "127.0.0.1:5001:5000"
+    environment:
+      ENVIRONMENT: staging
+      ENABLE_FAULT_INJECTION: "false"
+    restart: unless-stopped
+    networks:
+      - sre-monitoring
+
+networks:
+  sre-monitoring:
+    external: true
